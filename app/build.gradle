@@ -9,8 +9,19 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        //1.vector configuration
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    //if gradle version <2.1 use below configuration to disable using png picture exchange svg format
+//    defaultConfig{
+//        generatedDensities =[]
+//    }
+//
+//    aaptOptions{
+//        additionalParameters "--no-version-vectors"
+//    }
     buildTypes {
         release {
             minifyEnabled false
@@ -24,6 +35,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    //vector configuration >23.2
     compile 'com.android.support:appcompat-v7:23.4.0'
     testCompile 'junit:junit:4.12'
 }
